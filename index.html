@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contador de Cliques</title>
+  <style>
+    /* Reset básico para garantir consistência entre navegadores */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Estilos gerais do body */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%); /* Novo gradiente */
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: background 0.5s ease-in-out;
+    }
+
+    /* Estilos para o título */
+    h1 {
+      margin-bottom: 30px;
+      font-size: 3rem;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      animation: fadeIn 2s ease-out;
+    }
+
+    /* Animação de fadeIn para o título */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Estilos do botão */
+    button {
+      background-color: #ff6347; /* Cor de fundo do botão alterada */
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transform: scale(1);
+    }
+
+    button:hover {
+      background-color: #ff4500; /* Cor de fundo ao passar o mouse */
+      transform: scale(1.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    button:active {
+      transform: scale(1.05);
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Estilos para o contador */
+    .counter {
+      margin-top: 30px;
+      font-size: 2rem;
+      font-weight: bold;
+      padding: 20px 30px;
+      background-color: rgba(255, 255, 255, 0.15); /* Novo fundo para o contador */
+      color: #fff;
+      border-radius: 12px;
+      border: 2px solid #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .counter:hover {
+      transform: translateY(-5px);
+      background-color: rgba(255, 255, 255, 0.25); /* Efeito ao passar o mouse */
+    }
+
+    /* Responsividade para dispositivos móveis */
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px 25px;
+      }
+
+      .counter {
+        font-size: 1.5rem;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Contador de Cliques</h1>
+  <button onclick="incrementCount()">Clique aqui!</button>
+  <div class="counter" id="counter">Cliques: 0</div>
+
+  <script>
+    // Variável para contar os cliques
+    let clickCount = 0;
+
+    // Função para incrementar o contador e atualizar o display
+    function incrementCount() {
+      clickCount++;
+      document.getElementById('counter').innerText = `Cliques: ${clickCount}`;
+    }
+  </script>
+</body>
+</html>
